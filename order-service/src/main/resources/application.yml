@@ -1,0 +1,38 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: order-service
+
+  datasource: # todo: remove
+    url: jdbc:mysql://localhost:3306/order?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#      properties:
+#        spring.json.type.mapping: orderConfirmation:com.dhiraj.orderservice.kafka.OrderConfirmation
+server:
+  port: 8070
+
+app:
+  url:
+    customer-service: http://localhost:8080/api/v1/customer
+    product-service: http://localhost:8080/api/v1/product
+    payment-service: http://localhost:8080/api/v1/payment
+
+springdoc:
+  swagger-ui:
+    url: api/v1/order/swagger

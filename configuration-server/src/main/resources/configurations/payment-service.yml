@@ -1,0 +1,28 @@
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/payment?createDatabaseIfNotExist=true
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    jpa:
+#      hibernate:
+#        ddl-auto: update
+#      database-platform: org.hibernate.dialect.MySQL8Dialect
+#    #    show-sql: true
+#    #    properties:
+#    #      hibernate:
+#    #        format_sql: true
+#    kafka:
+#      producer:
+#        bootstrap-servers: localhost:9092
+#        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#        value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+##        properties:
+##          spring.json.type.mapping: paymentConfirmation:com.dhiraj.paymentservice.notification.PaymentConfirmation
+#
+#server:
+#  port: 8060
+#
+#app:
+#  url:
+#    product-service: http://localhost:8080/api/v1/product

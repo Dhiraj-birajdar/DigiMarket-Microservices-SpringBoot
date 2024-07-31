@@ -1,0 +1,29 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: product-service
+
+  datasource: # todo: remove
+    url: jdbc:mysql://localhost:3306/product?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+
+  flyway:
+      enabled: true
+      repair: true
+      baseline-on-migrate: true
+      baseline-description: "initialization"
+      baseline-version: 0
+server:
+#debug: true
+  port: 8050

@@ -1,0 +1,19 @@
+spring:
+    config:
+      import: optional:configserver:http://localhost:8888
+
+    application:
+      name: customer-service
+
+
+    data: # todo: remove
+     mongodb:
+#       username: root
+#       password: root
+#       host: localhost
+#       port: 27017
+#       database: customer
+       uri: mongodb://localhost:27017/customer
+#       authentication-database: admin
+#server:
+#   port: 8090

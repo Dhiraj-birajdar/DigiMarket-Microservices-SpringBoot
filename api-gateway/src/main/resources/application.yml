@@ -1,0 +1,40 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: api-gateway
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: "http://localhost:9090/realms/digimarket"
+
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: customer-service
+#          uri: lb:http://CUSTOMER-SERVICE
+#          predicates:
+#            - Path=/api/v1/customer/**
+#        - id: order-service
+#          uri: lb:http://ORDER-SERVICE
+#          predicates:
+#            - Path=/api/v1/order/**
+#        - id: order-lines-service
+#          uri: lb:http://ORDER-SERVICE
+#          predicates:
+#            - Path=/api/v1/order-line/**
+#        - id: product-service
+#          uri: lb:http://PRODUCT-SERVICE
+#          predicates:
+#            - Path=/api/v1/product/**
+#        - id: payment-service
+#          uri: lb:http://PAYMENT-SERVICE
+#          predicates:
+#            - Path=/api/v1/payment/**
+#server:
+#  port: 8080
