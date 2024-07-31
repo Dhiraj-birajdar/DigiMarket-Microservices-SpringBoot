@@ -85,9 +85,10 @@ If you prefer to use Docker Compose, a `docker-compose.yml` file is provided to 
 
 To start the services using Docker Compose:
 
-    ```sh
-    docker-compose up
 
+```sh
+   docker-compose up
+```
 ## License
 
 This project is free to use, modify, and sell. It is licensed under the MIT License - see the [LICENSE](https://www.apache.org/licenses/LICENSE-2.0.html) file for details.
